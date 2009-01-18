@@ -2,6 +2,10 @@ package TSB.info;
 
 public class Attributes {
 	
+
+	public static final int MADDEN_ATTRIBUTE_COUNT = 48;
+	public static final int TSB_ATTRIBUTE_COUNT = 14;
+	
 	public static final String[][] MaddenAttributes =
 	{
 		{"OVR","Overall"},
