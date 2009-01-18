@@ -27,6 +27,10 @@ public class Player {
 		_attributes = attributes;
 	}
 	
+	public String getTeamName(){
+		return _team.getFullTeamName();
+	}
+	
 	public String getFullName(){
 		return _firstName + " " + _lastName;
 	}
@@ -39,8 +43,15 @@ public class Player {
 	    return _lastName;
 	}
 	
+	public String getPosition(){
+		return _position;
+	}
+	
+	public String getNumber(){
+		return _number;
+	}
+	
 	public String[] getAttributes(){
 	    return _attributes;
 	}
-
 }

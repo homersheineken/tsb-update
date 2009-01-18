@@ -1,3 +1,5 @@
+package TSB;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Arrays;
@@ -6,11 +8,11 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
-import types.Player;
-import types.Team;
-import util.AttrField;
-import util.WebRosters;
-import info.Attributes;
+import TSB.types.Player;
+import TSB.types.Team;
+import TSB.util.AttrField;
+import TSB.util.WebRosters;
+import TSB.info.Attributes;
 
 public class RostersGUI extends JFrame implements ActionListener{
 	
@@ -27,10 +29,8 @@ public class RostersGUI extends JFrame implements ActionListener{
 	private JTextField _numberField;
 	private AttrField[] _attrFields;
 	
-	public final int MADDEN_ATTRIBUTE_COUNT = 48;
 	public final int MADDEN_ATTRIBUTE_ROWS = 4;
 	public final int MADDEN_ATTRIBUTE_COLS = 12;
-	public final int TSB_ATTRIBUTE_COUNT = 14;
 
 	public RostersGUI(){
 		super();
@@ -74,7 +74,7 @@ public class RostersGUI extends JFrame implements ActionListener{
 	}
 	
 	public void createAttributeFields(){
-	    _attrFields = new AttrField[MADDEN_ATTRIBUTE_COUNT];
+	    _attrFields = new AttrField[Attributes.MADDEN_ATTRIBUTE_COUNT];
 	    
 	    for(int x=0;x<MADDEN_ATTRIBUTE_COLS;x++){
             for(int y=0;y<MADDEN_ATTRIBUTE_ROWS;y++){

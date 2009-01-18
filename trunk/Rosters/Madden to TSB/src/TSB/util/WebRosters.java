@@ -42,7 +42,6 @@ public class WebRosters {
 		        		readIn = false;
 		        	}
 		            if (readIn){
-		            	Player tempPlayer;
 		            	inputLine = inputLine.replaceAll("<tr><td>", "");
 		            	inputLine = inputLine.replaceAll("</td><td>", ",");
 		            	inputLine = inputLine.replaceAll("</td></tr>", ",");	            	
@@ -50,7 +49,7 @@ public class WebRosters {
 		            	input.useDelimiter(",");
 		            	String firstName = input.next();
 		            	String lastName = input.next();
-		            	String position = input.next();
+		            	String position = getPosition(input.next());
 		            	String number = input.next();
 		            	String[] attributes = new String[48];
 		            	for(int c=0;c<attributes.length;c++){
@@ -80,6 +79,19 @@ public class WebRosters {
 		for(int x=0;x<allTeams.length;x++){
 			_allTeams[x] = new Team(allTeams[x][0],allTeams[x][1]);
 		}
+	}
+	
+	public String getPosition(String pos){
+		if (pos.equals("HB") || pos.equals("FB"))
+				return "RB";
+		if (pos.equals("C") || pos.equals("LT") || pos.equals("RT") ||
+			pos.equals("LG") || pos.equals("RG"))
+				return "OL";
+		if (pos.equals("LOLB") || pos.equals("ROLB") || pos.equals("MLB"))
+				return "LB";
+		if (pos.equals("CB") || pos.equals("FS") || pos.equals("SS"))
+				return "DB";
+		return pos;
 	}
 	
 	public Team[] getTeams(){

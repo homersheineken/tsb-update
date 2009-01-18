@@ -1,7 +1,7 @@
 package TSB.types;
 
 public class Team {
-	
+		
 	private String _location;
 	private String _name;
 	private Player[] _players;
