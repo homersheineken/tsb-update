@@ -1,17 +1,16 @@
-package TSB;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Arrays;
 
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JTextField;
 
-import TSB.types.Player;
-import TSB.types.Team;
-import TSB.util.AttrField;
-import TSB.util.WebRosters;
-import TSB.info.Attributes;
+import types.Player;
+import types.Team;
+import util.AttrField;
+import util.WebRosters;
+import info.Attributes;
 
 public class RostersGUI extends JFrame implements ActionListener{
 	
@@ -24,6 +23,8 @@ public class RostersGUI extends JFrame implements ActionListener{
 	
 	private JComboBox _teamsBox;
 	private JComboBox _playersBox;
+	private JTextField _positionField;
+	private JTextField _numberField;
 	private AttrField[] _attrFields;
 	
 	public final int MADDEN_ATTRIBUTE_COUNT = 48;
@@ -56,6 +57,14 @@ public class RostersGUI extends JFrame implements ActionListener{
 		_playersBox.setBounds(210,5,190,25);
 		_playersBox.addActionListener(this);
 		this.add(_playersBox);
+		
+		_positionField = new JTextField();
+		_positionField.setBounds(410,5,30,25);
+		this.add(_positionField);
+		
+		_numberField = new JTextField();
+		_numberField.setBounds(440,5,25,25);
+		this.add(_numberField);
 		
 		populatePlayers();
 		getSelectedPlayer();
@@ -115,6 +124,9 @@ public class RostersGUI extends JFrame implements ActionListener{
 	public void getSelectedPlayer(){
 	    Team team = _allTeams[_teamsBox.getSelectedIndex()];
 	    Player selectedPlayer = team.getPlayers()[_playersBox.getSelectedIndex()];
+	    
+	    _positionField.setText(selectedPlayer.getPosition());
+	    _numberField.setText(selectedPlayer.getNumber());
 	    
 	    String[] attributes = selectedPlayer.getAttributes();
 	    
