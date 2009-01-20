@@ -4,6 +4,7 @@ public class Team {
 		
 	private String _location;
 	private String _name;
+	private String _short;
 	private Player[] _players;
 	
 	public Team(){
@@ -11,9 +12,10 @@ public class Team {
 		_name = "Team";
 	}
 	
-	public Team(String locationIn, String nameIn){
+	public Team(String locationIn, String nameIn, String shortIn){
 		_location = locationIn;
 		_name = nameIn;
+		_short = shortIn;
 	}
 	
 	public String getTeamName(){
@@ -24,12 +26,20 @@ public class Team {
 		return _location;
 	}
 	
+	public String getShort(){
+	    return _short;
+	}
+	
 	public void setTeamName(String team_name){
 		_name = team_name;
 	}
 	
 	public void setLocation(String loc){
 		_location = loc;
+	}
+	
+	public void setShort(String ts){
+	    _short = ts;
 	}
 	
 	public String getFullTeamName(){

@@ -20,11 +20,7 @@ public class WebRosters {
 	public WebRosters(){
 		createTeams();
 		
-		getWebRosters();
-		
-		//System.out.println();
-		//System.out.println("Attr = " + _allTeams[0].getPlayers()[0].getAttributes()[0]);
-		
+		getWebRosters();		
 	}
 	
 	public void getWebRosters(){
@@ -77,7 +73,7 @@ public class WebRosters {
 		String[][] allTeams = TeamList.getAllTeams();
 		
 		for(int x=0;x<allTeams.length;x++){
-			_allTeams[x] = new Team(allTeams[x][0],allTeams[x][1]);
+			_allTeams[x] = new Team(allTeams[x][0],allTeams[x][1],allTeams[x][2]);
 		}
 	}
 	
@@ -87,6 +83,8 @@ public class WebRosters {
 		if (pos.equals("C") || pos.equals("LT") || pos.equals("RT") ||
 			pos.equals("LG") || pos.equals("RG"))
 				return "OL";
+		if (pos.equals("DT") || pos.equals("LE") || pos.equals("RE"))
+		        return "DL";
 		if (pos.equals("LOLB") || pos.equals("ROLB") || pos.equals("MLB"))
 				return "LB";
 		if (pos.equals("CB") || pos.equals("FS") || pos.equals("SS"))

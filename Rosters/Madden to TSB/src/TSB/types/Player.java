@@ -54,4 +54,8 @@ public class Player {
 	public String[] getAttributes(){
 	    return _attributes;
 	}
+	
+	public String getTeamShort(){
+	    return _team.getShort();
+	}
 }
