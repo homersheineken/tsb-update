@@ -1,0 +1,1 @@
+This contains files to bring Tecmo Super Bowl (NES) and Tecmo Super Bowl III (SNES) up to date.  The project will start with 2008's postseason rosters, and then move back in years from there.
